@@ -1,28 +1,22 @@
-
 #include <stdio.h>
 
 /**
- *main - Prints the add of the Fibonacci numbers
+ * main - Lists all the natural numbers below 1024 (excluded)
+ *        that are multiples of 3 or 5.
  *
  * Return: Always 0.
  */
 int main(void)
 {
-	int c;
-	long int n1, n2, fn;
+	int i, sum = 0;
 
-	n1 = 1;
-	n2 = 2;
-	printf("%ld, %ld", n1, n2);
-	for (c = 0; c < 48; c++)
+	for (i = 0; i < 1024; i++)
 	{
-		fn = n1 + n2;
-		printf(", %ld", fn);
-		n1 = n2;
-		n2 = fn;
+		if ((i % 3) == 0 || (i % 5) == 0)
+			sum += i;
 	}
-	printf("\n");
+
+	printf("%d\n", sum);
+
 	return (0);
 }
-
-
